@@ -1,0 +1,32 @@
+[package]
+name = "anychain-core"
+version = "0.1.8"
+description = "A core support for cryptocurrency wallets"
+categories = ["command-line-utilities", "cryptography::cryptocurrencies"]
+keywords = ["bitcoin", "blockchain", "ethereum", "no_std"]
+readme = "README.md"
+
+# Workspace inherited keys
+authors = { workspace = true }
+edition = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+
+[dependencies]
+sha3 = { workspace = true }
+thiserror = { workspace = true }
+ripemd = { workspace = true }
+bech32 = { workspace = true }
+hex = { workspace = true }
+base58 = { workspace = true, optional = true }
+rand_core = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+
+[features]
+default = ["std"]
+std = ["base58"]
+
+[lints]
+workspace = true
